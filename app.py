@@ -1,3 +1,11 @@
+import json
+
+try:
+    with open("students.json", "r") as f:
+        students = json.load(f)
+except FileNotFoundError:
+    students = [{"name": "Nguyen Van A"}]
+
 def search_students(keyword):
     result = []
     for student in students:
@@ -5,6 +13,5 @@ def search_students(keyword):
             result.append(student)
     return result
 
-# Kiểm tra:
-print(search_students("Nguyen"))
-
+if __name__ == "__main__":
+    print(search_students("Nguyen"))
