@@ -1,5 +1,6 @@
 import json
 
+# Tải danh sách sinh viên từ tệp JSON
 try:
     with open("students.json", "r") as f:
         students = json.load(f)
